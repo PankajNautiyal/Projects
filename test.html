@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            background-color: orangered;
+            width: 30vh;
+            height: 30vh;
+            border-radius: 50%;
+            filter: blur(7px);
+            animation: anime 2s linear alternate infinite;
+        }
+
+        @keyframes anime {
+            to {
+                transform: translateX(2px) translateY(12px);
+            }
+            from {
+                transform: translateX(20px) translateY(-20px);
+
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ball">
+
+    </div>
+    
+</body>
+</html>

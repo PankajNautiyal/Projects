@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    position: relative;
+    z-index: 10;
+}
+
+#page1 {
+    padding: 0 2vw;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #efeae3;
+    position: relative;
+}
+
+nav {
+    padding: 2vw 2vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.nav-right h4 {
+    padding: 10px 20px;
+    border: 1px solid rgb(91, 90, 90);
+    border-radius: 50px;
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    overflow: hidden;
+}
+
+.nav-right h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 30%;
+    transition: all ease 0.4s;
+}
+
+.nav-right h4:hover::after {
+    bottom: 0;
+}
+
+.nav-right h4 a {
+    text-decoration: none;
+    color: black;
+    z-index: 9;
+    position: relative;
+}
+
+.nav-right h4:hover a {
+    color: white;
+}
+
+.center {
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(200, 94, 53);
+    padding: 2.5vw;
+}
+
+.center .left h3 {
+    width: 25vw;
+    font-size: 1.8vw;
+    line-height: 2vw;
+    text-align: left;
+}
+
+.center h3 {
+    font-size: 10vw;
+    line-height: 8vw;
+    text-align: right;
+}
+
+#page1 video {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 4vw;
+    z-index: 2;
+}
+
+#page2 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #efeae3;
+    padding-top: 8vw;
+    padding-bottom: 5vw;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.927);
+}
+
+.moving-text {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.moving-text::-webkit-scrollbar {
+    display: none;
+}
+
+.cont {
+    white-space: nowrap;
+    display: inline-block;
+    animation: move linear 10s infinite;
+}
+
+
+.moving-text h1 {
+    font-size: 9vw;
+    display: inline-block;
+}
+
+.dot {
+    width: 70px;
+    height: 70px;
+    background-color: orangered;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1vw 2vw;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.page2-bottom {
+    height: 80vh;
+    width: 100%;
+    padding: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page2-bottom h1 {
+    font-size: 3.5vw;
+    width: 50%;
+    line-height: 4vw;
+    font-weight: bold;
+}
+
+.page2-bottom-right {
+    width: 30%;
+}
+
+.page2-bottom-right img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.page2-bottom-right p {
+    font-weight: 200;
+    margin: 2vw;
+    font-size: 1vw;
+}
+
+.page3 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #efeae3;
+    padding-top: 0;
+    padding-bottom: 4vw;
+}
+
+.elem {
+    height: 150px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+
+.elem h2 {
+    font-size: 3vw;
+    z-index: 9;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.2s;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+
+#fixed-image {
+    height: 30vw;
+    width: 24vw;
+    position: fixed;
+    border-radius: 10px;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    pointer-events: none;
+}
+
+#page4 {
+    height: 70vh;
+    width: 100%;
+    background-color: #efeae3;
+    padding: 8vw 1vw;
+}
+
+.swiper-wrapper {
+    position: absolute;
+    left: 0;
+    margin: 0;
+    cursor: grab;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #efeae3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #555555ec;
+}
+
+.swiper-slide:nth-child(n) {
+    width: 30%;
+}
+
+.swiper-slide p {
+    font-size: 1.3em;
+    text-align: left;
+    padding: 2vw 0;
+}
+
+#page5 {
+    height: 100vh;
+    width: 100%;
+}
+
+.footer {
+    position: fixed;
+    z-index: 9;
+    height: 105vh;
+    width: 100%;
+    bottom: 0;
+    background-color: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 1vw 3vw;
+
+}
+
+.footer h1 {
+    font-size: 22vw;
+}
+
+.footer-div {
+    height: 20vh;
+    width: 100%;
+    background-color: red;
+}
+
+.footer-bottom {
+    border-top: 1px solid #dadada;
+    height: 10vh;
+    width: 100%;
+}
+
+.footer-div {
+    height: 25vh;
+    width: 100%;
+    position: absolute;
+    top: 5vh;
+    background: linear-gradient(rgba(248, 81, 20, 0.97), rgb(247, 159, 59));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-left h2 {
+    font-size: 3vw;
+}
+
+.footer-right {
+    padding: 2vw;
+
+}
+
+.footer-right p {
+    padding: 2vw 0;
+
+    font-size: 1.5vw;
+}
+
+
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+    z-index: 999;
+    top: 0;
+    transition: all linear 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader h1 {
+    color: transparent;
+    font-size: 4vw;
+    background: linear-gradient(to right, orange, orangered);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation: load 1s linear 1s;
+}
+
+.loader h1:nth-child(2) {
+    animation: load 1s linear 2s;
+
+}
+
+.loader h1:nth-child(3) {
+    animation: load 1s linear 3s;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
